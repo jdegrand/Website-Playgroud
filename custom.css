@@ -3,8 +3,11 @@ cursor: move;
 }
 
 .draggable_window {
-    position: absolute;
     font-size: calc(12px + 0.5vh);
+    touch-action: none;
+  user-select: none;
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
 }
 
 .files {
@@ -29,9 +32,12 @@ overflow: hidden;
 }
 
 body {
+-webkit-overflow-scrolling: touch;
 width: 100%;
 position: relative;
 -webkit-touch-callout: none;
 -webkit-text-size-adjust: none;
--webkit-user-select: none;  
+-webkit-user-select: none; 
+padding: 0;
+margin: 0; 
 }
