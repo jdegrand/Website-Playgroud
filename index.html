@@ -54,7 +54,7 @@
 </head>
 
 <body>
-    <div style="display: flex;">
+    <div style="display: flex; height: 100%;">
         <div class="files">
             <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
                 <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
@@ -75,7 +75,7 @@
             </ul>
         </div>
         <div id="screen"
-            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px); height: 100%;">
+            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px);">
             <div id="project_folder" style="width: 100px; text-align: center;" ondblclick="showProjects()">
                 <img src="folder.png" height=75 width=75 />
                 <label style="font-size: 16px;">Projects</label>
@@ -103,7 +103,7 @@
                     </section>
                 </div>
             </div>
-            <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
+            <!-- <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
                 <div class="title-bar draggable_bar">
                     <div class="title-bar-text">Project - Camagotchi</div>
                     <div class="title-bar-controls">
@@ -127,9 +127,9 @@
                         <button onclick="closeWindow('camagotchi')">Cool</button>
                     </section>
                 </div>
-            </div>
+            </div> -->
 
-            <div id="vlocchain" class="window draggable draggable_window" style="width: 25%; min-width: 184px;">
+            <!-- <div id="vlocchain" class="window draggable draggable_window" style="width: 25%; min-width: 184px;">
                 <div class="title-bar draggable_bar">
                     <div class="title-bar-text">Project - VlocChain</div>
                     <div class="title-bar-controls">
@@ -182,7 +182,7 @@
                     </section>
                 </div>
             </div>
-        </div>
+        </div> -->
 </body>
 
 </html>
