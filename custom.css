@@ -29,7 +29,6 @@ overflow: hidden;
 }
 
 body {
--webkit-overflow-scrolling: touch;
 width: 100%;
 position: relative;
 -webkit-touch-callout: none;
