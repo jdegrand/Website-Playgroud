@@ -22,7 +22,7 @@
 
                 // call this function on every dragend event
                 end(event) {
-                    
+
                 }
             }
         })
@@ -54,106 +54,135 @@
 </head>
 
 <body>
-    <div id="about" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
-        <div class="title-bar draggable_bar">
-            <div class="title-bar-text">About Me</div>
-            <div class="title-bar-controls">
-                <button aria-label="Close" onclick="closeWindow('about')"></button>
-            </div>
+    <div style="display: flex;">
+        <div class="files">
+            <ul class="tree-view" style="width: 100%; font-size:calc(12px + 0.5vw);">
+                <li onclick="openWindow('about')" style="cursor: pointer;"><a>About Me</a></li>
+                <li>
+                    <a onclick="showProjects()" style="cursor: pointer;">Projects</a>
+                    <ul>
+                        <li onclick="openWindow('camagotchi')" style="cursor: pointer;"><a>Camagotchi</a></li>
+                        <li><a>Joe Flo Party Mo</a></li>
+                        <li onclick="openWindow('vlocchain')" style="cursor: pointer;"><a>VlocChain</a></li>
+                        <li onclick="openWindow('quotebot')" style="cursor: pointer;"><a>QuoteBot</a></li>
+                    </ul>
+                </li>
+                <li><a>About This Site</a></li>
+                <li><a>Contact</a></li>
+                <li><a style="color: white; visibility: hidden;">Easter Egg ;)</a></li>
+                <li><a onclick="hideAll()" style="cursor: pointer; color: darkred;">Hide All</a></li>
+                <li><a onclick="showAll()" style="cursor: pointer; color: darkred;">Show All</a></li>
+            </ul>
         </div>
-        <div class="window-body">
-            <div style="display: flex;">
-                <div style="max-width: 33%; display: flex;
-          justify-content: center; align-items: center;">
-                    <img src="profile.jpeg" style="max-width: 100%; height: auto;
-            width: auto\9;" />
+        <div id="screen"
+            style="background-image: url('bliss.jpg'); background-size: cover; flex: 1; max-width: calc(100vw - 200px); height: 100vh;">
+            <div id="project_folder" style="width: 100px; text-align: center;" ondblclick="showProjects()">
+                <img src="folder.png" height=75 width=75 />
+                <label style="font-size: 16px;">Projects</label>
+            </div>
+            <div id="about" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">About Me</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('about')"></button>
+                    </div>
                 </div>
-                <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-                    <p>Hello! My name is Joe DeGrand. I am a 3rd year computer science student at Rochester Institute of
-                        Technology.</p>
+                <div class="window-body">
+                    <div style="display: flex;">
+                        <div style="max-width: 33%; display: flex; justify-content: center; align-items: center;">
+                            <img src="profile.jpeg" style="max-width: 100%; height: auto; width: auto\9;" />
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                            <p>Hello! My name is Joe DeGrand. I am a 3rd year computer science student at Rochester
+                                Institute of
+                                Technology.</p>
+                        </div>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button onclick="closeWindow('about')">OK</button>
+                    </section>
                 </div>
             </div>
-            <section class="field-row" style="justify-content: flex-end; clear: both;">
-                <button onclick="closeWindow('about')">OK</button>
-            </section>
-        </div>
-    </div>
-    <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
-        <div class="title-bar draggable_bar">
-          <div class="title-bar-text">Project - Camagotchi</div>
-          <div class="title-bar-controls">
-            <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <div style="width: 100%; text-align: center;">
-              <img src="camagotchi.png" style="max-width: 80%;" />
+            <div id="camagotchi" class="window draggable draggable_window" style="width: 23%; min-width: 184px;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">Project - Camagotchi</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('camagotchi')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="camagotchi.png" style="max-width: 80%;" />
+                        </div>
+                        <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The
+                            program utilizes the
+                            ncurses and multithreading libraries to recreate this experience. Future plans include 3D
+                            printing a case
+                            and attaching a screen and buttons to work with the program.</p>
+                        <p>Spring 2019</p>
+                        <a href="https://github.com/jdegrand/Camagotchi" target="_blank">Github</a>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button onclick="closeWindow('camagotchi')">Cool</button>
+                    </section>
+                </div>
             </div>
-            <p id="test">A remake of the famous Tamagotchi toy, the digital pet simulator, written in C. The program utilizes the
-              ncurses and multithreading libraries to recreate this experience. Future plans include 3D printing a case
-              and attaching a screen and buttons to work with the program.</p>
-            <p>Spring 2019</p>
-            <a href="https://github.com/jdegrand/Camagotchi" target="_blank">Github</a>
-          </div>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('camagotchi')">Cool</button>
-          </section>
-        </div>
-      </div>
 
-      <div id="vlocchain" class="window draggable draggable_window" style="width: 25%; min-width: 184px;">
-        <div class="title-bar draggable_bar">
-          <div class="title-bar-text">Project - VlocChain</div>
-          <div class="title-bar-controls">
-            <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
-          </div>
-        </div>
-        <div class="window-body">
-          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <div style="width: 100%; text-align: center;">
-              <img src="vlocc.png" style="max-width: 80%;" />
+            <div id="vlocchain" class="window draggable draggable_window" style="width: 25%; min-width: 184px;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">Project - VlocChain</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('vlocchain')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                        <div style="width: 100%; text-align: center;">
+                            <img src="vlocc.png" style="max-width: 80%;" />
+                        </div>
+                        <p>A project started at a hackathon that two other students and I continued to work on
+                            afterward. Utilizes
+                            the
+                            idea of blockchain technology with video sharing. My part of the project included all of the
+                            UI, setting
+                            up
+                            and using a database with mySQL, Flask API, and creating a custom web video player.</p>
+                        <p>Spring 2018</p>
+                        <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">Github</a>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end">
+                        <button onclick="closeWindow('vlocchain')">Sick!</button>
+                    </section>
+                </div>
             </div>
-            <p>A project started at a hackathon that two other students and I continued to work on afterward. Utilizes
-              the
-              idea of blockchain technology with video sharing. My part of the project included all of the UI, setting
-              up
-              and using a database with mySQL, Flask API, and creating a custom web video player.</p>
-            <p>Spring 2018</p>
-            <a href="https://github.com/VlocC/VlocChain-0.0" target="_blank">Github</a>
-          </div>
-          <section class="field-row" style="justify-content: flex-end">
-            <button onclick="closeWindow('vlocchain')">Sick!</button>
-          </section>
-        </div>
-      </div>
-    </div>
 
-    <div id="quotebot" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
-      <div class="title-bar draggable_bar">
-        <div class="title-bar-text">Project - QuoteBot</div>
-        <div class="title-bar-controls">
-          <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
+            <div id="quotebot" class="window draggable draggable_window" style="width: 50%; z-index: 10;">
+                <div class="title-bar draggable_bar">
+                    <div class="title-bar-text">Project - QuoteBot</div>
+                    <div class="title-bar-controls">
+                        <button aria-label="Close" onclick="closeWindow('quotebot')"></button>
+                    </div>
+                </div>
+                <div class="window-body">
+                    <div style="display: flex;">
+                        <div style="max-width: 20%; display: flex; justify-content: center; align-items: center;">
+                            <img src="telegram_logo.png" style="max-width: 100%; height: auto; width: auto\9;" />
+                        </div>
+                        <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
+                            <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small
+                                features.
+                                This is connected to public Telegram API and running on a Raspberry Pi.</p>
+                            <p>Fall 2018</p>
+                            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">Github</a>
+                        </div>
+                    </div>
+                    <section class="field-row" style="justify-content: flex-end; clear: both;">
+                        <button onclick="closeWindow('quotebot')">OK</button>
+                    </section>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="window-body">
-        <div style="display: flex;">
-          <div style="max-width: 20%; display: flex;
-        justify-content: center; align-items: center;">
-            <img src="telegram_logo.png" style="max-width: 100%; height: auto;
-          width: auto\9;" />
-          </div>
-          <div style="margin-left: 10px; padding: 1rem;  overflow-wrap: break-word; width: 100;">
-            <p>A bot for the Telegram messaging app that stores quotes, pictures, and other small features. This is connected to public Telegram API and running on a Raspberry Pi.</p>
-            <p>Fall 2018</p>
-            <a href="https://github.com/jdegrand/QuoteBot" target="_blank">Github</a>
-          </div>
-        </div>
-        <section class="field-row" style="justify-content: flex-end; clear: both;">
-          <button onclick="closeWindow('quotebot')">OK</button>
-        </section>
-      </div>
-    </div>
 </body>
 
 </html>
